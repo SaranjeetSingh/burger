@@ -1,0 +1,47 @@
+<div>
+    <img id ="burgerimg" src="http://www.habitburger.com/wp-content/uploads/charburger-on-wood.jpg">
+</div>
+<div id="notDevouredBurgers">
+  <table id="tb1">
+    {{#each this}}
+        {{#if burger_name}}
+        {{#unless devoured}}
+        <tr data-id='{{id}}'>        
+            <td>
+            {{burger_name}}
+            </td>
+            <td>
+            <button class="devour">Devour it!!</button>
+            </td>
+        </tr>
+        {{/unless}}
+        {{/if}}
+    {{/each}}
+  </table>
+</div>
+
+
+<div id="devouredBurgers">
+  <table id="tb2">
+    {{#each this}}
+        {{#if burger_name}}
+        {{#if devoured}}
+        <tr data-id='{{id}}'>
+        <td>
+         {{burger_name}}
+        </td>
+        </tr>
+        {{/if}}
+        {{/if}}
+    {{/each}}
+  </table>
+</div>
+
+<div id="newOne">
+<input type="textbox" id="newburgertext"></input> 
+<br>
+<button id ="newburger">Enter New Burger</button>
+</div>
+
+
+
